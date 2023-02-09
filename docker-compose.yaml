@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: dangdang
+    volumes:
+      - /Users/yangchang/front-end/dangdang-backend/db/data:/var/lib/mysql
+      - /Users/yangchang/front-end/dangdang-backend/db/cnf/my.cnf:/etc/mysql/my.cnf
+  adminer:
+    image: adminer
+    ports:
+      - 8888:8080
